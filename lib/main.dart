@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/home_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,27 +13,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(brightness: Brightness.dark),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Ticket to Calculate'),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.teal,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.teal,
+          ),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.teal.shade600,
+        ),
       ),
-      body: Center(),
+      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(),
     );
   }
 }
