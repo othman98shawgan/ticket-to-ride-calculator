@@ -16,8 +16,8 @@ class _RoutesPageState extends State<RoutesPage> {
     2: 2,
     3: 4,
     4: 7,
-    5: 15,
-    6: 21,
+    6: 15,
+    8: 21,
   };
 
   @override
@@ -67,7 +67,7 @@ class _RoutesPageState extends State<RoutesPage> {
     if (routesHistory[index].isNotEmpty) {
       setState(() {
         var removedValue = routesHistory[index].removeLast();
-        usedTrains[index]-= removedValue;
+        usedTrains[index] -= removedValue;
         var lastValue = socreMap[removedValue]!;
         routesScore[index] -= lastValue;
         totalScore[index] -= lastValue;
@@ -85,7 +85,6 @@ class _RoutesPageState extends State<RoutesPage> {
   }
 
   Widget routes(int index, Color color) {
-
     double width = MediaQuery.of(context).size.width;
 
     return Container(
@@ -158,14 +157,14 @@ class _RoutesPageState extends State<RoutesPage> {
                         child: const Text("4")),
                     ElevatedButton(
                         onPressed: () {
-                          addScore(index, 5);
-                        },
-                        child: const Text("5")),
-                    ElevatedButton(
-                        onPressed: () {
                           addScore(index, 6);
                         },
                         child: const Text("6")),
+                    ElevatedButton(
+                        onPressed: () {
+                          addScore(index, 8);
+                        },
+                        child: const Text("8")),
                   ],
                 )
               ],
